@@ -60,28 +60,37 @@ class SimpleScraper:
         file.close()
 
         file = open('unique_data.txt','r')
-        i = 1 #Test to check how far we are in the data list in case you wish to stop in between
+        url_list = []
         for url in file.readlines():
+            url_list.append(url)
+        file.close()
+
+        i = 1 #Test to check how far we are in the data list in case you wish to stop in between
+        for url in url_list:
             if i <= j:
                 i += 1
             else:
-                print('You are at number ', i, ' now')
+                print('You are at number ', i,'/',len(url_list), ' now')
                 try:
                     webbrowser.open(url)
 
                     '''Quality guidelines as described by Garousi, Felderer, Mantyla
                     #https://arxiv.org/ftp/arxiv/papers/1707/1707.02553.pdf'''
-                    source = input('What is the source of this?')
-                    authority = input('Is the source reputable?')
-                    method = input('Is the method well defined?')
-                    objectivity = input('Is it an objective article?')
-                    date = input('Enter year of article')
-                    novelty = input('Does it contain a novel element?')
-                    tier = input('Enter which tier it belongs to, 1st, 2nd, 3rd')
-                    notes = input('Enter any additional notes')
+                    source = input('What is the source of this? ')
+                    authority = input('Is the source reputable? ')
+                    method = input('Is the methodology sound? ')
+                    sources = input('Are claims made by the authors supported by sources? ')
+                    objectivity = input('Is it an objective article? ')
+                    date = input('Enter year of article ')
+                    novelty = input('Does it contain a novel element? ')
+                    tier = input('Enter which tier it belongs to, 1st, 2nd, 3rd ')
+                    relevance = input('Is this relevant for your query? ')
+                    notes = input('Enter any additional notes ')
 
+                    file = open('results_systematic_review.txt', 'a')
                     file.write(source+' ;'+authority+' ;'+method+' ;'+objectivity+' ;'
-                               +date+' ;'+novelty+' ;'+tier+' ;'+notes+'\n')
+                               +date+' ;'+novelty+' ;'+tier+' ;'+relevance+' ;'
+                               +notes+'\n')
                     file.close()
                 except:
                     file = open('results_systematic_review.txt', 'a')
