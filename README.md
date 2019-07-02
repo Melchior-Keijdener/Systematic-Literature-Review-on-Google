@@ -1,6 +1,6 @@
 # Systematically search for hits on Google
 
-I had to do a systematic literature review, but did not wish to manually work my way through all google pages, opening each link by hand. So I wrote a program for that. You still have to close it though, but saves at least 50% of clicking. It's very simple and only works through the command line, you also need to use python. This is a tool, not a program.
+I had to do a systematic literature review, but did not wish to manually work my way through all google pages, opening each link by hand. So I wrote a program for that. You still have to close it though, but saves at least 50% of clicking. It's very simple and only works through the command line, you also need to use python. This is a tool, not a software product.
 
 ## Quick overview of functionalitites, menu has 5 options:
 - clean: CAREFUL, this cleans the text files containing the data, so you need to start over if you do this. Run this command first time to create initial files.
@@ -16,5 +16,6 @@ This data is stored in the systematic literature review text file with a semicol
 
 - Beautifulsoup4 or bs4 (same thing)
 - requests
+- Python 3 (2 is unsupported, update you peasant)
 
 Rest already comes with Python installed.
