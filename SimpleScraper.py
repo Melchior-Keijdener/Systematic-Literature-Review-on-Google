@@ -1,9 +1,9 @@
-import re, requests
+import re
+import requests
 import bs4
-import csv
 import webbrowser
-import numpy as np
 import time
+
 
 class SimpleScraper:
     def __init__(self, number=50):
@@ -103,21 +103,3 @@ class SimpleScraper:
         for url in unique_urls:
             file.write(url)
         file.close()
-
-def main():
-    ScrapyScrape = SimpleScraper()
-    while True == True:
-        user_action = input('clean, analyze, unique, exit or search? ')
-        if user_action == 'clean':
-            ScrapyScrape.clean_data()
-        if user_action == 'search':
-            ScrapyScrape.search()
-        if user_action == 'exit' or user_action == 'quit':
-            quit()
-        if user_action == 'analyze' or user_action == 'analyse':
-            ScrapyScrape.analyze()
-        if user_action == 'unique':
-            ScrapyScrape.determine_unique()
-
-if __name__ == '__main__':
-    main()
