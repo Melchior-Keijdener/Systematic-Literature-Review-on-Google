@@ -2,7 +2,7 @@ from SimpleScraper import SimpleScraper
 
 
 def main():
-    ScrapyScrape = SimpleScraper()
+    ScrapyScrape = SimpleScraper(number=50)
     while True == True:
         user_action = input('clean, analyze, unique, exit or search? ')
         if user_action == 'clean':
