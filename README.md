@@ -16,5 +16,6 @@ This data is stored in the systematic literature review text file with a semicol
 
 - Beautifulsoup4 or bs4 (same thing)
 - requests
+- Python 3 (2 is unsupported, update you peasant)
 
 Rest already comes with Python installed.
