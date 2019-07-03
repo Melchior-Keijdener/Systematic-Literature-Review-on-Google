@@ -36,7 +36,7 @@ class SimpleScraper:
                         i +=1
                         self.store_data(link)
         print('quick slowdown before google bans you')
-        time.sleep(10)
+        time.sleep(5)
 
     def update_term(self, term, page):
         updated_term = re.sub(' ','+',term)
