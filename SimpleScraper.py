@@ -76,21 +76,30 @@ class SimpleScraper:
 
                     '''Quality guidelines as described by Garousi, Felderer, Mantyla
                     #https://arxiv.org/ftp/arxiv/papers/1707/1707.02553.pdf'''
-                    source = input('What is the source of this? ')
-                    authority = input('Is the source reputable? ')
-                    method = input('Is the methodology sound? ')
-                    sources = input('Are claims made by the authors supported by sources? ')
-                    objectivity = input('Is it an objective article? ')
+                    source = input('Who is the author or organization? ')
                     date = input('Enter year of article ')
-                    novelty = input('Does it contain a novel element? ')
-                    tier = input('Enter which tier it belongs to, 1st, 2nd, 3rd ')
                     relevance = input('Is this relevant for your query? ')
-                    notes = input('Enter any additional notes ')
+                    if relevance == 'yes':
+                        authority = input('Is the source reputable? Does the author have any authority in this field? ')
+                        method = input('Is the aim of the artcle clear? Is a method well described? ')
+                        claims = input('Are claims made by the authors supported by sources? ')
+                        objectivity = input('Is it an objective article? ')
+                        novelty = input('Does this enrich your research? ')
+                        tier = input('Enter which tier it belongs to, 1st, 2nd, 3rd ')
+                    else:
+                        authority = ''
+                        method = ''
+                        claims = ''
+                        objectivity = ''
+                        novelty = ''
+                        tier = ''
+                    notes = input('What does it say? Why is this important to in/exclude? What elements are '
+                                  'interesting to investigate when revisting this link? ')
 
                     file = open('results_systematic_review.txt', 'a')
                     file.write(source+' ;'+authority+' ;'+method+' ;'+objectivity+' ;'
-                               +date+' ;'+novelty+' ;'+tier+' ;'+relevance+' ;'
-                               +notes+'\n')
+                               +claims+' ;'+date+' ;'+novelty+' ;'+tier+' ;'
+                               +relevance+' ;'+notes+'\n')
                     file.close()
                 except:
                     file = open('results_systematic_review.txt', 'a')
