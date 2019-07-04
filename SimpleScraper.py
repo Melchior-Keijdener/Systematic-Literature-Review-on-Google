@@ -100,7 +100,7 @@ class SimpleScraper:
                     file = open('results_systematic_review.txt', 'a')
                     file.write(source+'; '+authority+'; '+method+'; '+objectivity+'; '
                                +claims+'; '+date+'; '+novelty+'; '+tier+'; '
-                               +relevance+'; '+notes+'\n')
+                               +relevance+'; '+notes+'; '+ url)
                     file.close()
                 except:
                     file = open('results_systematic_review.txt', 'a')
