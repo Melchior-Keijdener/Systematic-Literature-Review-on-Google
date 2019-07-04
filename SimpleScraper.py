@@ -127,7 +127,7 @@ class SimpleScraper:
         file = open('results_systematic_review.txt', 'r')
         csvfile = open('results_systematic_review.csv', 'w', newline='')
         writer = csv.writer(csvfile, delimiter=';')
-        writer.writerow(['Source; authority; method; objectivity; claims; date; novelty; tier; relevance; notes'])
+        writer.writerow(['Source; authority; method; objectivity; claims; date; novelty; tier; relevance; notes; url'])
         for line in file:
             print(line)
             writer.writerow([line])
