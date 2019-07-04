@@ -79,7 +79,7 @@ class SimpleScraper:
                     #https://arxiv.org/ftp/arxiv/papers/1707/1707.02553.pdf'''
                     source = input('Who is the author or organization? \n')
                     date = input('Enter year of article \n')
-                    relevance = input('Is this relevant for your query? \n')
+                    relevance = input('Is this relevant for your query? Answer yes to fill in extra info \n')
                     if relevance == 'yes':
                         authority = input('Is the source reputable? Does the author have any authority in this field? \n')
                         method = input('Is the aim of the article clear? Is a method well described? \n')
