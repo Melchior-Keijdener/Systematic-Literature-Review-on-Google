@@ -3,6 +3,7 @@ import requests
 import bs4
 import webbrowser
 import time
+import csv
 
 
 class SimpleScraper:
@@ -97,9 +98,9 @@ class SimpleScraper:
                                   'interesting to investigate when revisting this link? \n')
 
                     file = open('results_systematic_review.txt', 'a')
-                    file.write(source+' ;'+authority+' ;'+method+' ;'+objectivity+' ;'
-                               +claims+' ;'+date+' ;'+novelty+' ;'+tier+' ;'
-                               +relevance+' ;'+notes+'\n')
+                    file.write(source+'; '+authority+'; '+method+'; '+objectivity+'; '
+                               +claims+'; '+date+'; '+novelty+'; '+tier+'; '
+                               +relevance+'; '+notes+'\n')
                     file.close()
                 except:
                     file = open('results_systematic_review.txt', 'a')
@@ -120,4 +121,16 @@ class SimpleScraper:
         file = open('unique_data.txt','w')
         for url in unique_urls:
             file.write(url)
+        file.close()
+
+    def export(self):
+        file = open('results_systematic_review.txt', 'r')
+        csvfile = open('results_systematic_review.csv', 'w', newline='')
+        writer = csv.writer(csvfile, delimiter=';')
+        writer.writerow(['Source; authority; method; objectivity; claims; date; novelty; tier; relevance; notes'])
+        for line in file:
+            print(line)
+            writer.writerow([line])
+        print('written results to csv file')
+        csvfile.close()
         file.close()
