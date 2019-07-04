@@ -76,16 +76,16 @@ class SimpleScraper:
 
                     '''Quality guidelines as described by Garousi, Felderer, Mantyla
                     #https://arxiv.org/ftp/arxiv/papers/1707/1707.02553.pdf'''
-                    source = input('Who is the author or organization? ')
-                    date = input('Enter year of article ')
-                    relevance = input('Is this relevant for your query? ')
+                    source = input('Who is the author or organization? \n')
+                    date = input('Enter year of article \n')
+                    relevance = input('Is this relevant for your query? \n')
                     if relevance == 'yes':
-                        authority = input('Is the source reputable? Does the author have any authority in this field? ')
-                        method = input('Is the aim of the artcle clear? Is a method well described? ')
-                        claims = input('Are claims made by the authors supported by sources? ')
-                        objectivity = input('Does the article discuss the topic objectively? ')
-                        novelty = input('Does this enrich your research? ')
-                        tier = input('Enter which tier it belongs to: white, 1st, 2nd, 3rd? ')
+                        authority = input('Is the source reputable? Does the author have any authority in this field? \n')
+                        method = input('Is the aim of the article clear? Is a method well described? \n')
+                        claims = input('Are claims made by the authors supported by sources? \n')
+                        objectivity = input('Does the article discuss the topic objectively? \n')
+                        novelty = input('Does this enrich your research? \n')
+                        tier = input('Enter which tier it belongs to: white, 1st, 2nd, 3rd? \n')
                     else:
                         authority = ''
                         method = ''
@@ -94,7 +94,7 @@ class SimpleScraper:
                         novelty = ''
                         tier = ''
                     notes = input('What does it say? Why is this important to in/exclude? What elements are '
-                                  'interesting to investigate when revisting this link? ')
+                                  'interesting to investigate when revisting this link? \n')
 
                     file = open('results_systematic_review.txt', 'a')
                     file.write(source+' ;'+authority+' ;'+method+' ;'+objectivity+' ;'
