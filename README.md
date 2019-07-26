@@ -10,7 +10,7 @@ I had to do a systematic literature review, but did not wish to manually work my
 - exit: Closes the program, you can alternatively of course throwing your computer out of the window will do the trick as well (or angrily F4ing)
 - export: Writes your results from your systematic review to a csv file.
 
-##On usage
+## On usage
 You can now just use the .exe file and run the program. For clarification the correct way of commands running is:
 clean, search, clean, unique, analyze, export, exit.
 
